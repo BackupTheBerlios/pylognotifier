@@ -1,5 +1,5 @@
 #
-#  $Id: FileMonitor.py,v 1.2 2006/11/06 21:30:59 rik0 Exp $
+#  $Id: FileMonitor.py,v 1.3 2006/11/07 00:07:51 rik0 Exp $
 #  LogNotifier
 #
 #  Created by Riko on 23/10/06.
@@ -41,9 +41,6 @@ class FileMonitor(object):
     def fileno(self):
         return self._file.fileno()
 
-#    def read(self, n=-1):
-#        return self._file.read(n)
-        
     def readline(self, sz=-1):
         buf = self._file.readline(sz)
         if self._file.tell() == self.size(): self.update()
